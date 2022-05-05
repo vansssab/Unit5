@@ -37,4 +37,12 @@ abbreviation_dictionary = {
     'lol' : 'laugh out loud', 
     'tbh' : 'to be honest',
     'nbd' : 'no big deal',
+    'asap' : 'as soon as possible',
+    'lmk' : 'let me know'
 }
+
+abbreviation = input("What is the abbreviation you wonder about? ")
+if abbreviation in abbreviation_dictionary:
+    print(abbreviation_dictionary[abbreviation])
+else:
+    print("Sorry, that is not in the dictionary.")
