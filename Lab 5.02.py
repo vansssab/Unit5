@@ -48,3 +48,36 @@ example_paragraph_lower_no_punctuation = example_paragraph_lower.replace(".", ""
 #convert paragraph into a list of individual strings
 example_word_list = example_paragraph_lower_no_punctuation.split(" ")
 '''
+example_paragraph = "It was a sunny day in Oklahoma. The day was hot.  I stayed indoors."
+
+#make all letters lowercase
+example_paragraph_lower = example_paragraph.lower()
+
+#remove all periods
+example_paragraph_lower_no_punctuation = example_paragraph_lower.replace(".", "")
+
+#convert paragraph into a list of individual strings
+example_word_list = example_paragraph_lower_no_punctuation.split(" ")
+
+frequency_dictionary = {
+    'it' : '1',
+    'was' : '2', 
+    'a' : '1',
+    'sunny' : '1',
+    'day' : '2',
+    'in' : '1',
+    'oklahoma' : '1',
+    'the' : '1',
+    'hot': '1',
+    'i' : '1',
+    'stayed' : '1',
+    'indoors' : '1'
+}
+
+def frequency(paragraph_list):
+    answer = input("What word would you like to know the frequency of? ")
+    if answer in paragraph_list:
+        print(f"{answer} occurs {frequency_dictionary[answer]} times. ")
+
+print(example_word_list)
+frequency(example_word_list)
