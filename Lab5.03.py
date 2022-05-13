@@ -57,7 +57,10 @@ def add():
     day = input("What day? ")
     if day in to_do_list:
         addition = input(f"What would you like to add to {day}'s to-do list? ")
-        to_do_list += day(addition)
+        if addition in to_do_list:
+            print("You already have that in yout list.")
+        else:
+            to_do_list[day] += addition
     else:
         print("That is not a day. Try again.")
         add()
@@ -67,15 +70,19 @@ def add():
 
 
 def get():
-    pass
+    global to_do_list
+    day = input("What day? ")
+    if day in to_do_list:
+        print(to_do_list[day])
+    else:
+        print("That is not a day. ")
 
 while True:
     choice = input("What would you like to do? (add or get) ")
     if choice == 'add':
         add()
     elif choice == 'get':
-        pass
+        get()
     else:
         print("That is not an option. Try again.")
     
-    print(to_do_list['Friday'])
