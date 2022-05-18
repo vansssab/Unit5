@@ -90,16 +90,18 @@ def text_to_word(example_paragraph):
 
     return example_word_list
 
-def count_frequencies(example_word_list):
+def count_frequencies(list):
     frequency = {}
-    for i in example_word_list:
+    for i in list:
         if i in frequency:
             frequency[i] += 1
         else:
-            frequency += i
+            frequency[i] = 1
 
-    return frequency
+    print(frequency)
+        
 
-text_to_word(example_paragraph)
-count_frequencies(example_word_list)
+
+print(count_frequencies(text_to_word(example_paragraph)))
+
 
