@@ -98,10 +98,15 @@ def count_frequencies(list):
         else:
             frequency[i] = 1
 
-    print(frequency)
+    return frequency
         
+def max_valued_key(frequency):
+    greatest_key = list(frequency.values())[0]
+    for i in frequency:
+        if frequency[i] > greatest_key:
+            greatest_key = frequency[i]
 
+    return greatest_key
 
-print(count_frequencies(text_to_word(example_paragraph)))
-
+print(max_valued_key(count_frequencies(text_to_word(example_paragraph))))
 
